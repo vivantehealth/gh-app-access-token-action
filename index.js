@@ -14,6 +14,9 @@ async function run() {
       type: "installation",
       installationId,
     })
+    if !token.token {
+      throw new Error('Invalid access token:', token)
+    }
     core.setSecret(token.token)
     core.setOutput('token', token.token)
   } catch (error) {
