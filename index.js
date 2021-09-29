@@ -14,7 +14,7 @@ async function run() {
       type: "installation",
       installationId,
     })
-    if !token.token {
+    if (!token.token) {
       console.error("Invalid access token:", token)
       throw new Error('Invalid access token')
     }
