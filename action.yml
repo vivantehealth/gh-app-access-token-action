@@ -10,7 +10,7 @@ inputs:
   installation-id:
     description: "The GitHub App's installation id"
     required: true
- outputs:
+outputs:
    token:
      description: 'Generated access token'
 runs:
