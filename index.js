@@ -14,8 +14,8 @@ async function run() {
       type: "installation",
       installationId,
     })
-    core.setSecret(token)
-    core.setOutput('token', token)
+    core.setSecret(token.token)
+    core.setOutput('token', token.token)
   } catch (error) {
     core.setFailed(error.message);
   }
