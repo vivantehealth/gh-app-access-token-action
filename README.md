@@ -1,5 +1,5 @@
 # gh-app-access-token-action
-Use this module to get a GitHub App's access token. This can be useful in automation wherever a personal access token would normally be used (but does not currently work with GitHub's package registry)
+Use this module to get a GitHub App's access token. This can be useful in automation wherever a personal access token would normally be used (but does not currently work with GitHub's package registry). We decided it was best to use our own action here, rather than third party, because it deals with handling secrets. This action would be a fine candidate to publish to the marketplace (recommending that people fork it, for the same reason we don't use marketplace actions for this)
 
 Suggested usage:
 ```
