@@ -1,12 +1,15 @@
-name: 'GitHub App Installation Access Token Generator'
-description: "Given an app id, installation id and private key, generates short-lived access tokens for a GitHub App Installation. This can be used in place of a personal access token when doing things like reading from GitHub's package registry"
+name: GitHub App Installation Access Token Generator
+description: Given an app id, installation id and private key, generates short-lived access tokens for a GitHub App Installation. This can be used in place of a personal access token when doing things like reading from GitHub's package registry
 inputs:
   private-key:
     description: 'The private key used to sign the JWTs'
+    required: true
   app-id:
     description: "The GitHub App's app id"
+    required: true
   installation-id:
     description: "The GitHub App's installation id"
+    required: true
  outputs:
    token:
      description: 'Generated access token'
