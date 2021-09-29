@@ -7,12 +7,12 @@ async function run() {
     const appId = core.getInput('app-id', { required: true });
     const installationId = core.getInput('installation-id', { required: true });
     const appAuth = createAppAuth({
-      +appId,
+      appId,
       privateKey,
     });
     const token = appAuth({
       type: "installation",
-      +installationId,
+      installationId,
     })
     core.setSecret(token)
     core.setOutput('token', token)
