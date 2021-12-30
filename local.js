@@ -9,7 +9,7 @@ async function run() {
       appId,
       privateKey,
     });
-    const token = appAuth({
+    const token = await appAuth({
       type: "installation",
       installationId,
     });
