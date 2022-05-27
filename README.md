@@ -9,7 +9,7 @@ Suggested usage:
         with:
           app-id: 141210
           installation-id: 19791482
-          private-key: ${{ secrets.GH_PACKAGE_REGISTRY_READER_PRIVATE_KEY }}
+          private-key: ${{ secrets.GH_WORKFLOW_CHAINING_PRIVATE_KEY }}
       - name: Do something in GitHub
         run: echo "masked token: ${{ steps.access_token.outputs.token }}"
 ```
