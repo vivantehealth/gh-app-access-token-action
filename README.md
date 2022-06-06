@@ -35,3 +35,17 @@ Suggested usage for reading private go packages
         run: |
          git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
+
+Suggested usage for reading private php packages
+```
+      - name: Get GitHub App installation access token
+        id: access_token
+        uses: vivantehealth/gh-app-access-token-action/@v0
+        with:
+          app-id: 208089
+          installation-id: 26293597
+          private-key: ${{ secrets.PHP_PACKAGE_READER_PRIVATE_KEY }}
+      - name: Granting private modules access
+        run: |
+         git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
+```
