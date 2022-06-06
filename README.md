@@ -59,7 +59,7 @@ Suggested usage for reading private terraform modules
         with:
           app-id: 208275
           installation-id: 26306144
-          private-key: ${{ secrets.PHP_PACKAGE_READER_PRIVATE_KEY }}
+          private-key: ${{ secrets.TERRAFORM_MODULE_READER_PRIVATE_KEY }}
       - name: Granting private modules access
         run: |
          git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
