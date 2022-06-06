@@ -49,3 +49,18 @@ Suggested usage for reading private php packages
         run: |
          git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
+
+
+Suggested usage for reading private terraform modules
+```
+      - name: Get GitHub App installation access token
+        id: access_token
+        uses: vivantehealth/gh-app-access-token-action/@v0
+        with:
+          app-id: 208275
+          installation-id: 26306144
+          private-key: ${{ secrets.PHP_PACKAGE_READER_PRIVATE_KEY }}
+      - name: Granting private modules access
+        run: |
+         git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
+```
