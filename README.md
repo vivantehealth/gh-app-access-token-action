@@ -31,7 +31,7 @@ Suggested usage for reading private go packages
           app-id: 205255
           installation-id: 26038368
           private-key: ${{ secrets.GO_PACKAGE_READER_PRIVATE_KEY }}
-      - name: Granting private modules access
+      - name: Grant private modules access
         run: |
          git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
@@ -45,22 +45,30 @@ Suggested usage for reading private php packages
           app-id: 208089
           installation-id: 26293597
           private-key: ${{ secrets.PHP_PACKAGE_READER_PRIVATE_KEY }}
-      - name: Granting private modules access
+      - name: Grant private modules access
         run: |
          git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
 
-
-Suggested usage for reading private terraform modules
+Suggested usage for reading private terraform modules (this is built into terraform-stack-workflow)
 ```
-      - name: Get GitHub App installation access token
-        id: access_token
-        uses: vivantehealth/gh-app-access-token-action/@v0
-        with:
-          app-id: 208275
-          installation-id: 26306144
-          private-key: ${{ secrets.TERRAFORM_MODULE_READER_PRIVATE_KEY }}
-      - name: Granting private modules access
-        run: |
-         git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
+    - name: Get GitHub App installation access token
+      id: access_token
+      uses: vivantehealth/gh-app-access-token-action/@v0
+      with:
+        app-id: 208275
+        installation-id: 26306144
+        private-key: ${{ inputs.tf_module_reader_private_key }}
+    - name: Grant private modules access
+      run: |
+        git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
+```
+
+And then access the module as usual
+
+```
+module "name_of_module" {
+  source = "github.com/vivantehealth/some-private-tf-module?ref=v0"
+  ...
+}
 ```
