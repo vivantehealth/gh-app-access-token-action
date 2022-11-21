@@ -9,7 +9,7 @@
   "author": "Vivante Health",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.9.1",
-    "@octokit/auth-app": "^3.6.0"
+    "@actions/core": "^1.10.0",
+    "@octokit/auth-app": "^4.0.7"
   }
 }
