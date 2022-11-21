@@ -18,4 +18,4 @@ jobs:
       - name: GitHub semver release
         uses: vivantehealth/github-semver-release-action@v0
         with:
-          default-bump: patch
+          default-bump: minor
