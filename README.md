@@ -64,6 +64,23 @@ Suggested usage for reading private terraform modules (this is built into terraf
         git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
 
+Suggested usage for issue automation (such as the actions in github.com/vivantehealth/zi)
+```
+      - name: Get GitHub App installation access token
+        id: access_token
+        uses: vivantehealth/gh-app-access-token-action/@main
+        with:
+          app-id: 280535
+          installation-id: 33038019
+          private-key: ${{ secrets.GH_ISSUE_AUTOMATION_PRIVATE_KEY }}
+      - uses: actions/add-to-project@v0.4.0
+        with:
+          project-url: https://github.com/orgs/vivantehealth/projects/9
+          github-token: ${{ steps.access_token.outputs.token }}
+          labeled: access-control, security-exceptions, onboarding, offboarding
+          label-operator: OR
+```
+
 And then access the module as usual
 
 ```
