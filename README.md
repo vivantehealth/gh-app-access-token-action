@@ -64,6 +64,16 @@ Suggested usage for reading private terraform modules (this is built into terraf
         git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
 
+And then access the module as usual
+
+```
+module "name_of_module" {
+  source = "github.com/vivantehealth/some-private-tf-module?ref=v0"
+  ...
+}
+```
+
+
 Suggested usage for issue automation (such as the actions in github.com/vivantehealth/zi)
 ```
       - name: Get GitHub App installation access token
@@ -81,11 +91,3 @@ Suggested usage for issue automation (such as the actions in github.com/vivanteh
           label-operator: OR
 ```
 
-And then access the module as usual
-
-```
-module "name_of_module" {
-  source = "github.com/vivantehealth/some-private-tf-module?ref=v0"
-  ...
-}
-```
