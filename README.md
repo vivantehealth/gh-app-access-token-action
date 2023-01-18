@@ -50,6 +50,20 @@ Suggested usage for reading private php packages
          git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
 
+Suggested usage for reading private python packages
+```
+      - name: Get GitHub App installation access token
+        id: access_token
+        uses: vivantehealth/gh-app-access-token-action/@v0
+        with:
+          app-id: 283084
+          installation-id: 33266564
+          private-key: ${{ secrets.PYTHON_PACKAGE_READER_PRIVATE_KEY }}
+      - name: Grant private package access
+        run: |
+          git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
+```
+
 Suggested usage for reading private terraform modules (this is built into terraform-stack-workflow)
 ```
     - name: Get GitHub App installation access token
