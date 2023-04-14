@@ -8,7 +8,7 @@ Suggested usage for workflow chaining:
         uses: vivantehealth/gh-app-access-token-action/@main
         with:
           app-id: 141210
-          installation-id: 19791482
+          installation-id: 26037448
           private-key: ${{ secrets.GH_WORKFLOW_CHAINING_PRIVATE_KEY }}
       - uses: actions/github-script@v6
         with:
