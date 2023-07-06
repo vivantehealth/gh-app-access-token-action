@@ -22,7 +22,7 @@ Suggested usage for workflow chaining:
             })"
 ```
 
-Suggested usage for reading private go packages
+Suggested usage for reading private go packages (note: the github app needs to be installed for each repo where go packages are fetched)
 ```
       - name: Get GitHub App installation access token
         id: access_token
@@ -36,7 +36,7 @@ Suggested usage for reading private go packages
          git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
 
-Suggested usage for reading private php packages
+Suggested usage for reading private php packages (note: the github app needs to be installed for each repo where php packages are fetched)
 ```
       - name: Get GitHub App installation access token
         id: access_token
@@ -50,7 +50,7 @@ Suggested usage for reading private php packages
          git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
 
-Suggested usage for reading private python packages
+Suggested usage for reading private python packages (note: the github app needs to be installed for each repo where python packages are fetched)
 ```
       - name: Get GitHub App installation access token
         id: access_token
@@ -64,7 +64,7 @@ Suggested usage for reading private python packages
           git config --global url."https://x-access-token:${{ steps.access_token.outputs.token }}@github.com/vivantehealth".insteadOf "https://github.com/vivantehealth"
 ```
 
-Suggested usage for reading private terraform modules (this is built into terraform-stack-workflow)
+Suggested usage for reading private terraform modules (this is built into terraform-stack-workflow. note: the github app needs to be installed for each repo where terraform modules are fetched)
 ```
     - name: Get GitHub App installation access token
       id: access_token
