@@ -14,5 +14,5 @@ outputs:
    token:
      description: 'Generated access token'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'index.js'
