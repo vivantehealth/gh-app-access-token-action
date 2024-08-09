@@ -10,7 +10,7 @@ Suggested usage for workflow chaining:
           app-id: 141210
           installation-id: 26037448
           private-key: ${{ secrets.GH_WORKFLOW_CHAINING_PRIVATE_KEY }}
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v7
         with:
           github-token: ${{ steps.access_token.outputs.token }}
           script: |
